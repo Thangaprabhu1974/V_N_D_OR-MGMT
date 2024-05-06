@@ -1,3 +1,4 @@
+**To Add New Vendor**
 1.	Open Postman and create a new request.
 2.	Set the request method to POST.
 3.	Enter the request URL for your Django API endpoint where you want to add the new vendor. For example: http://localhost:8000/api/vendors/.
@@ -13,9 +14,11 @@
 
 
 
+**To Get all Vendors Details**
+
 GET http://localhost:8000/api/vendors/
 
-It Lists all vendors
+
 
 GET http://localhost:8000/api/vendors/ {vendor_id}/
 Retrieve a specific vendor's details.
@@ -31,11 +34,16 @@ PUT  http://localhost:8000/api/vendors/ {vendor_id}/
 Body should be like this.
 1.	Headers section and add a new header with key Content-Type and value application/json. This header tells the server that the request body will be in JSON format.
 
+
+**To Delete Particular Vendor**
+
 DELETE  http://localhost:8000/api/vendors/ {vendor_id}/
 
 Delete a vendor.
  
-Purchase Order
+    **Purchase Order**
+
+****To Create a new PO****
 
 POST http://localhost:8000/api/purchase_orders/
 
@@ -62,17 +70,20 @@ Json body format
     "issue_date": "2024-04-13T09:05:00"
 }
 
+**To List all PO**
  
 GET  http://localhost:8000/api/purchase_orders/
 
 Headers 
 "Content-Type" = "application/json"
-It lists all Purchase orders
 
+**To list Particular PO id**
 
 GET  http://localhost:8000/api/purchase_orders/ {po_id}/
 "Content-Type" = "application/json"
-It list Particular PO id
+
+**To update PO data without using PATCH and using PUT**
+
 PUT  http://localhost:8000/api/purchase_orders/ {po_id}/
 "Content-Type" = "application/json"
 Json body format is 
@@ -100,10 +111,11 @@ Json body format is
     "vendor": 13
 }
 
+**To Delete one PO**
+
 Delete  http://localhost:8000/api/purchase_orders/ {po_id}/
 
-It deletes the partucular PO
-
+**To update Acknowledgement date for a particular PO**
 
 POST http://localhost:8000/api/purchase_orders/ {po_id}/acknowledge/
 
@@ -114,7 +126,10 @@ Json body format is
     "acknowledgment_date": "2024-04-14T09:05:00Z"
 }
  
-Vendor Performance
+
+
+
+**Vendor Performance**
 
 GET http://localhost:8000/api/vendors/ {vendor_id}/performance
  
